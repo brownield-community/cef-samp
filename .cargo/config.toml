@@ -1,2 +1,10 @@
+[build]
+target = "i686-pc-windows-msvc"
+
 [target.i686-pc-windows-msvc]
-rustflags = ["-C", "target-feature=+crt-static"]
+rustflags = [
+ "-C", "target-feature=+crt-static",
+ "-L", "D:\\lib",
+ "-l", "static=libcef",
+ "-l", "libcef"
+ ]
