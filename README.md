@@ -1,4 +1,16 @@
-# Bounce CEF</div>
+> [!WARNING]
+> Для сборки проекта используйте эти команды
+#
+> rustup toolchain install nightly-2022-11-06-i686-pc-windows-msvc
+
+> cargo build --release
+# Для сборки определенного пакета
+> cargo build --release --package name
+
+# Также измение в файле ".cargo\config.toml" путь до libcef
+>  "-L", "D:\\lib" - указывайте ваш путь до этого файла. Найти его можно в папке "lib" в корне проекта
+
+# SAMP CEF</div>
 This project embeds CEF into SA:MP expanding abilities to express yourself with beauty in-game interfaces using HTML / CSS / JavaScript.
 
 Author: **ZOTTCE**
