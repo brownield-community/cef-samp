@@ -36,7 +36,7 @@ jobs:
           cargo build --package server --release
           strip -s target/release/libserver.so -o stripped.so
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: cef-${{ matrix.os }}.so
           path: stripped.so
@@ -61,7 +61,7 @@ jobs:
           cargo build --package server --release
           strip -s target/release/libserver.so -o stripped.so
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: cef-centos-7.so
           path: stripped.so
@@ -92,7 +92,7 @@ jobs:
           cargo build --package server --release
           strip -s target/release/libserver.so -o stripped.so
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: cef-debian-${{ matrix.os }}.so
           path: stripped.so
@@ -159,27 +159,27 @@ jobs:
           7z a -tzip cef.zip cef.asi cef
         shell: bash
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: client.dll
           path: target/release/client.dll
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: renderer.exe
           path: target/release/renderer.exe
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: cef.asi
           path: target/release/loader.dll
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: cef-windows.dll
           path: target/release/server.dll
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: cef.zip
           path: redist/cef.zip
