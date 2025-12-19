@@ -34,7 +34,7 @@ Chromium Version: 89.0.4389.40
 Chromium URL:     https://chromium.googlesource.com/chromium/src.git
                   @2c3400a2b467aa3cf67b4942740db29e60feecb8
 
-
+```
 + cargo update -p chrono --precise 0.4.30  Если выполнить, возможно пойдет билд
 * $env:RUSTC_BOOTSTRAP=1; cargo +nightly-2022-11-06-i686 build --release --ignore-rust-version - powershell cmd
 * $env:RUSTC_BOOTSTRAP=1; cargo +nightly-2022-11-06-i686 build --release --package client --no-default-features --ignore-rust-version - powershell cmd
