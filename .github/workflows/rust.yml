@@ -108,14 +108,14 @@ jobs:
 
       - name: DirectX SDK cache
         id: dx-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ${{ env.DX_SDK_DIR }}
           key: directx
 
       - name: CEF static library cache
         id: cef-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ${{ env.CEF_PATH }}
           key: libcef
