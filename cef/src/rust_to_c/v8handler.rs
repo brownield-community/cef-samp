@@ -9,13 +9,13 @@ use cef_sys::{cef_string_t, cef_v8handler_t, cef_v8value_t};
 
 unsafe extern "stdcall" fn execute<I: V8Handler>(
     this: *mut cef_v8handler_t, name: *const cef_string_t, object: *mut cef_v8value_t,
-    argumentsCount: usize, arguments: *const *mut cef_v8value_t, retval: *mut *mut cef_v8value_t,
-    exception: *mut cef_string_t,
+    argumentsCount: usize, arguments: *const *mut cef_v8value_t, _retval: *mut *mut cef_v8value_t,
+    _exception: *mut cef_string_t,
 ) -> std::os::raw::c_int {
     let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
 
     let name = CefString::from(name);
-    let object = V8Value::from_raw(object);
+    let _object = V8Value::from_raw(object);
 
     let args: Vec<V8Value> = std::slice::from_raw_parts(arguments, argumentsCount)
         .iter()

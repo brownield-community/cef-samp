@@ -6,12 +6,12 @@ use crate::ProcessId;
 use std::sync::Arc;
 
 pub trait RenderProcessHandler {
-    fn on_context_created(self: &Arc<Self>, browser: Browser, frame: Frame, context: V8Context) {}
-    fn on_context_released(self: &Arc<Self>, browser: Browser, frame: Frame, context: V8Context) {}
+    fn on_context_created(self: &Arc<Self>, _browser: Browser, _frame: Frame, _context: V8Context) {}
+    fn on_context_released(self: &Arc<Self>, _browser: Browser, _frame: Frame, _context: V8Context) {}
     fn on_webkit_initialized(self: &Arc<Self>) {}
     fn on_process_message(
-        self: &Arc<Self>, browser: Browser, frame: Frame, source: ProcessId,
-        message: ProcessMessage,
+        self: &Arc<Self>, _browser: Browser, _frame: Frame, _source: ProcessId,
+        _message: ProcessMessage,
     ) -> bool {
         false
     }

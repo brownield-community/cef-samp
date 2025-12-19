@@ -11,7 +11,7 @@ pub struct CefString {
 
 impl CefString {
     pub fn new(text: &str) -> CefString {
-        let mut string = Self::new_null();
+        let string = Self::new_null();
 
         unsafe {
             cef_string_utf8_to_utf16(text.as_ptr() as *const _, text.len(), string.inner);
@@ -80,7 +80,7 @@ impl From<*const cef_string_t> for CefString {
 
 impl From<cef_string_userfree_t> for CefString {
     fn from(string: cef_string_userfree_t) -> CefString {
-        let mut cefstr = Self::new_null();
+        let cefstr = Self::new_null();
 
         unsafe {
             let src = &mut *string;

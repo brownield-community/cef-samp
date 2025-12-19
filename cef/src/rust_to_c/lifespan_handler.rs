@@ -2,7 +2,6 @@ use super::Wrapper;
 use crate::handlers::lifespan::LifespanHandler;
 
 use crate::browser::Browser;
-use crate::ref_counted::RefGuard;
 use cef_sys::{cef_browser_t, cef_life_span_handler_t};
 use std::sync::Arc;
 

@@ -38,8 +38,8 @@ pub trait Client {
     }
 
     fn on_process_message(
-        self: &Arc<Self>, browser: Browser, frame: Frame, source: ProcessId,
-        message: ProcessMessage,
+        self: &Arc<Self>, _browser: Browser, _frame: Frame, _source: ProcessId,
+        _message: ProcessMessage,
     ) -> bool {
         false
     }

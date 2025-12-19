@@ -35,7 +35,7 @@ extern "stdcall" fn get_browser_process_handler<I: App>(
 }
 
 extern "stdcall" fn on_before_command_line_processing<I: App>(
-    this: *mut cef_app_t, process_type: *const cef_string_t, command_line: *mut cef_command_line_t,
+    this: *mut cef_app_t, _process_type: *const cef_string_t, command_line: *mut cef_command_line_t,
 ) {
     let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
     //    let process_type = CefString::from(process_type);

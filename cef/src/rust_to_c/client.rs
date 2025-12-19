@@ -44,56 +44,56 @@ extern "stdcall" fn context_menu<I: Client>(
 
 // dialog
 
-extern "stdcall" fn dialog<I: Client>(this: *mut cef_client_t) -> *mut cef_dialog_handler_t {
+extern "stdcall" fn dialog<I: Client>(_this: *mut cef_client_t) -> *mut cef_dialog_handler_t {
     println!("dialog");
     null_mut()
 }
 
 // display
 
-extern "stdcall" fn display<I: Client>(this: *mut cef_client_t) -> *mut cef_display_handler_t {
+extern "stdcall" fn display<I: Client>(_this: *mut cef_client_t) -> *mut cef_display_handler_t {
     println!("display");
     null_mut()
 }
 
 // download
 
-extern "stdcall" fn download<I: Client>(this: *mut cef_client_t) -> *mut cef_download_handler_t {
+extern "stdcall" fn download<I: Client>(_this: *mut cef_client_t) -> *mut cef_download_handler_t {
     println!("download");
     null_mut()
 }
 
 // drag
 
-extern "stdcall" fn drag<I: Client>(this: *mut cef_client_t) -> *mut cef_drag_handler_t {
+extern "stdcall" fn drag<I: Client>(_this: *mut cef_client_t) -> *mut cef_drag_handler_t {
     println!("drag");
     null_mut()
 }
 
 // find
 
-extern "stdcall" fn find<I: Client>(this: *mut cef_client_t) -> *mut cef_find_handler_t {
+extern "stdcall" fn find<I: Client>(_this: *mut cef_client_t) -> *mut cef_find_handler_t {
     println!("find");
     null_mut()
 }
 
 // focus
 
-extern "stdcall" fn focus<I: Client>(this: *mut cef_client_t) -> *mut cef_focus_handler_t {
+extern "stdcall" fn focus<I: Client>(_this: *mut cef_client_t) -> *mut cef_focus_handler_t {
     println!("focus");
     null_mut()
 }
 
 // jsdialog
 
-extern "stdcall" fn jsdialog<I: Client>(this: *mut cef_client_t) -> *mut cef_jsdialog_handler_t {
+extern "stdcall" fn jsdialog<I: Client>(_this: *mut cef_client_t) -> *mut cef_jsdialog_handler_t {
     println!("jsdialog");
     null_mut()
 }
 
 // keyboard
 
-extern "stdcall" fn keyboard<I: Client>(this: *mut cef_client_t) -> *mut cef_keyboard_handler_t {
+extern "stdcall" fn keyboard<I: Client>(_this: *mut cef_client_t) -> *mut cef_keyboard_handler_t {
     println!("keyboard");
     null_mut()
 }
@@ -124,7 +124,7 @@ extern "stdcall" fn render<I: Client>(this: *mut cef_client_t) -> *mut cef_rende
 
 // request
 
-extern "stdcall" fn request<I: Client>(this: *mut cef_client_t) -> *mut cef_request_handler_t {
+extern "stdcall" fn request<I: Client>(_this: *mut cef_client_t) -> *mut cef_request_handler_t {
     println!("request");
     null_mut()
 }

@@ -11,7 +11,7 @@ use cef_sys::{
 use std::sync::Arc;
 
 unsafe extern "stdcall" fn get_accessibility_handler<I: RenderHandler>(
-    this: *mut cef_render_handler_t,
+    _this: *mut cef_render_handler_t,
 ) -> *mut cef_accessibility_handler_t {
     //    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
     // let _ = obj.interface.accessibility_handler();
@@ -19,7 +19,7 @@ unsafe extern "stdcall" fn get_accessibility_handler<I: RenderHandler>(
 }
 
 unsafe extern "stdcall" fn get_root_screen_rect<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t, rect: *mut cef_rect_t,
+    this: *mut cef_render_handler_t, browser: *mut cef_browser_t, _rect: *mut cef_rect_t,
 ) -> ::std::os::raw::c_int {
     let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
 
@@ -44,9 +44,9 @@ unsafe extern "stdcall" fn get_view_rect<I: RenderHandler>(
 }
 
 unsafe extern "stdcall" fn get_screen_point<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t, viewX: ::std::os::raw::c_int,
-    viewY: ::std::os::raw::c_int, screenX: *mut ::std::os::raw::c_int,
-    screenY: *mut ::std::os::raw::c_int,
+    _this: *mut cef_render_handler_t, browser: *mut cef_browser_t, _viewX: ::std::os::raw::c_int,
+    _viewY: ::std::os::raw::c_int, _screenX: *mut ::std::os::raw::c_int,
+    _screenY: *mut ::std::os::raw::c_int,
 ) -> ::std::os::raw::c_int {
     //    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
     (*browser).base.release.unwrap()(&mut (*browser).base);
@@ -55,8 +55,8 @@ unsafe extern "stdcall" fn get_screen_point<I: RenderHandler>(
 }
 
 unsafe extern "stdcall" fn get_screen_info<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
-    screen_info: *mut cef_screen_info_t,
+    _this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
+    _screen_info: *mut cef_screen_info_t,
 ) -> ::std::os::raw::c_int {
     //    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
     (*browser).base.release.unwrap()(&mut (*browser).base);
@@ -110,9 +110,9 @@ unsafe extern "stdcall" fn on_paint<I: RenderHandler>(
 }
 
 unsafe extern "stdcall" fn on_accelerated_paint<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
-    type_: cef_paint_element_type_t::Type, dirtyRectsCount: usize, dirtyRects: *const cef_rect_t,
-    shared_handle: *mut ::std::os::raw::c_void,
+    _this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
+    _type_: cef_paint_element_type_t::Type, _dirtyRectsCount: usize, _dirtyRects: *const cef_rect_t,
+    _shared_handle: *mut ::std::os::raw::c_void,
 ) {
     //    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
     (*browser).base.release.unwrap()(&mut (*browser).base);
@@ -121,8 +121,8 @@ unsafe extern "stdcall" fn on_accelerated_paint<I: RenderHandler>(
 }
 
 unsafe extern "stdcall" fn on_cursor_change<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t, cursor: HCURSOR,
-    type_: cef_cursor_type_t::Type, custom_cursor_info: *const cef_cursor_info_t,
+    _this: *mut cef_render_handler_t, browser: *mut cef_browser_t, _cursor: HCURSOR,
+    _type_: cef_cursor_type_t::Type, _custom_cursor_info: *const cef_cursor_info_t,
 ) {
     (*browser).base.release.unwrap()(&mut (*browser).base);
     //    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
@@ -130,8 +130,8 @@ unsafe extern "stdcall" fn on_cursor_change<I: RenderHandler>(
 }
 
 unsafe extern "stdcall" fn start_dragging<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t, drag_data: *mut cef_drag_data_t,
-    allowed_ops: cef_drag_operations_mask_t, x: ::std::os::raw::c_int, y: ::std::os::raw::c_int,
+    _this: *mut cef_render_handler_t, browser: *mut cef_browser_t, drag_data: *mut cef_drag_data_t,
+    _allowed_ops: cef_drag_operations_mask_t, _x: ::std::os::raw::c_int, _y: ::std::os::raw::c_int,
 ) -> ::std::os::raw::c_int {
     (*browser).base.release.unwrap()(&mut (*browser).base);
     (*drag_data).base.release.unwrap()(&mut (*drag_data).base);
@@ -144,14 +144,14 @@ unsafe extern "stdcall" fn update_drag_cursor<I: RenderHandler>(
     this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
     operation: cef_drag_operations_mask_t,
 ) {
-    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
+    let _obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
     (*browser).base.release.unwrap()(&mut (*browser).base);
     let _a = operation.0 * 4;
     // let _ = obj.interface.update_drag_cursor();
 }
 
 unsafe extern "stdcall" fn on_scroll_offset_changed<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t, x: f64, y: f64,
+    _this: *mut cef_render_handler_t, browser: *mut cef_browser_t, _x: f64, _y: f64,
 ) {
     (*browser).base.release.unwrap()(&mut (*browser).base);
     //    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
@@ -160,17 +160,17 @@ unsafe extern "stdcall" fn on_scroll_offset_changed<I: RenderHandler>(
 
 unsafe extern "stdcall" fn oicrc<I: RenderHandler>(
     this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
-    selected_range: *const cef_range_t, character_boundsCount: usize,
-    character_bounds: *const cef_rect_t,
+    _selected_range: *const cef_range_t, _character_boundsCount: usize,
+    _character_bounds: *const cef_rect_t,
 ) {
-    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
+    let _obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
     (*browser).base.release.unwrap()(&mut (*browser).base);
     // let _ = obj.interface.on_ime_composition_range_changed();
 }
 
 unsafe extern "stdcall" fn on_text_selection_changed<I: RenderHandler>(
-    this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
-    selected_text: *const cef_string_t, selected_range: *const cef_range_t,
+    _this: *mut cef_render_handler_t, browser: *mut cef_browser_t,
+    _selected_text: *const cef_string_t, _selected_range: *const cef_range_t,
 ) {
     (*browser).base.release.unwrap()(&mut (*browser).base);
     //    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(this);
@@ -181,7 +181,7 @@ unsafe extern "stdcall" fn ovkr<I: RenderHandler>(
     _this: *mut cef_render_handler_t, _browser: *mut cef_browser_t,
     _input_mode: cef_text_input_mode_t::Type,
 ) {
-    let obj: &mut Wrapper<_, I> = Wrapper::unwrap(_this);
+    let _obj: &mut Wrapper<_, I> = Wrapper::unwrap(_this);
     let _a = Browser::from_raw(_browser);
     //    let _b = _input_mode * 4;
 }
