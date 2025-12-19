@@ -30,7 +30,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install build-essential g++-multilib -y
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build server plugin
         run: |
           cargo build --package server --release
@@ -55,7 +55,7 @@ jobs:
           toolchain: nightly-i686-unknown-linux-gnu
           override: true
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build server plugin
         run: |
           cargo build --package server --release
@@ -86,7 +86,7 @@ jobs:
           toolchain: nightly-i686-unknown-linux-gnu
           override: true
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build server plugin
         run: |
           cargo build --package server --release
@@ -143,7 +143,7 @@ jobs:
           toolchain: nightly-i686-pc-windows-msvc
           override: true
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build client
         run: cargo build --release
         shell: bash
